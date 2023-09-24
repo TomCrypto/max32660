@@ -261,7 +261,11 @@ impl W {
     pub fn sram3_off(&mut self) -> SRAM3_OFF_W<LPMEMSD_SPEC, 3> {
         SRAM3_OFF_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -56,111 +56,13 @@ where
     }
 }
 #[doc = "Field `MASS_ERASE` reader - Mass Erase."]
-pub type MASS_ERASE_R = crate::BitReader<MASS_ERASE_A>;
-#[doc = "Mass Erase.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MASS_ERASE_A {
-    #[doc = "0: No operation/complete."]
-    COMPLETE = 0,
-    #[doc = "1: Start operation."]
-    START = 1,
-}
-impl From<MASS_ERASE_A> for bool {
-    #[inline(always)]
-    fn from(variant: MASS_ERASE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl MASS_ERASE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> MASS_ERASE_A {
-        match self.bits {
-            false => MASS_ERASE_A::COMPLETE,
-            true => MASS_ERASE_A::START,
-        }
-    }
-    #[doc = "No operation/complete."]
-    #[inline(always)]
-    pub fn is_complete(&self) -> bool {
-        *self == MASS_ERASE_A::COMPLETE
-    }
-    #[doc = "Start operation."]
-    #[inline(always)]
-    pub fn is_start(&self) -> bool {
-        *self == MASS_ERASE_A::START
-    }
-}
-#[doc = "Field `MASS_ERASE` writer - Mass Erase."]
-pub type MASS_ERASE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MASS_ERASE_A>;
-impl<'a, REG, const O: u8> MASS_ERASE_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "No operation/complete."]
-    #[inline(always)]
-    pub fn complete(self) -> &'a mut crate::W<REG> {
-        self.variant(MASS_ERASE_A::COMPLETE)
-    }
-    #[doc = "Start operation."]
-    #[inline(always)]
-    pub fn start(self) -> &'a mut crate::W<REG> {
-        self.variant(MASS_ERASE_A::START)
-    }
-}
+pub use WRITE_R as MASS_ERASE_R;
 #[doc = "Field `PAGE_ERASE` reader - Page Erase."]
-pub type PAGE_ERASE_R = crate::BitReader<PAGE_ERASE_A>;
-#[doc = "Page Erase.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PAGE_ERASE_A {
-    #[doc = "0: No operation/complete."]
-    COMPLETE = 0,
-    #[doc = "1: Start operation."]
-    START = 1,
-}
-impl From<PAGE_ERASE_A> for bool {
-    #[inline(always)]
-    fn from(variant: PAGE_ERASE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl PAGE_ERASE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> PAGE_ERASE_A {
-        match self.bits {
-            false => PAGE_ERASE_A::COMPLETE,
-            true => PAGE_ERASE_A::START,
-        }
-    }
-    #[doc = "No operation/complete."]
-    #[inline(always)]
-    pub fn is_complete(&self) -> bool {
-        *self == PAGE_ERASE_A::COMPLETE
-    }
-    #[doc = "Start operation."]
-    #[inline(always)]
-    pub fn is_start(&self) -> bool {
-        *self == PAGE_ERASE_A::START
-    }
-}
+pub use WRITE_R as PAGE_ERASE_R;
+#[doc = "Field `MASS_ERASE` writer - Mass Erase."]
+pub use WRITE_W as MASS_ERASE_W;
 #[doc = "Field `PAGE_ERASE` writer - Page Erase."]
-pub type PAGE_ERASE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PAGE_ERASE_A>;
-impl<'a, REG, const O: u8> PAGE_ERASE_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "No operation/complete."]
-    #[inline(always)]
-    pub fn complete(self) -> &'a mut crate::W<REG> {
-        self.variant(PAGE_ERASE_A::COMPLETE)
-    }
-    #[doc = "Start operation."]
-    #[inline(always)]
-    pub fn start(self) -> &'a mut crate::W<REG> {
-        self.variant(PAGE_ERASE_A::START)
-    }
-}
+pub use WRITE_W as PAGE_ERASE_W;
 #[doc = "Field `WIDTH` reader - Data Width."]
 pub type WIDTH_R = crate::BitReader<WIDTH_A>;
 #[doc = "Data Width.\n\nValue on reset: 0"]
@@ -470,7 +372,11 @@ impl W {
     pub fn unlock_code(&mut self) -> UNLOCK_CODE_W<CTRL_SPEC, 28> {
         UNLOCK_CODE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

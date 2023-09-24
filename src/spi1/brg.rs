@@ -5,7 +5,7 @@ pub type W = crate::W<BRG_SPEC>;
 #[doc = "Field `DIV` reader - Baud Rate Reload Value."]
 pub type DIV_R = crate::FieldReader<u16>;
 #[doc = "Field `DIV` writer - Baud Rate Reload Value."]
-pub type DIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type DIV_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Baud Rate Reload Value."]
     #[inline(always)]
@@ -20,7 +20,11 @@ impl W {
     pub fn div(&mut self) -> DIV_W<BRG_SPEC, 0> {
         DIV_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

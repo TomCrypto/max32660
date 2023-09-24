@@ -36,7 +36,7 @@ impl LO_R {
     }
 }
 #[doc = "Field `LO` writer - Low duty cycle control."]
-pub type LO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, LO_A>;
+pub type LO_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 8, O, LO_A>;
 impl<'a, REG, const O: u8> LO_W<'a, REG, O>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -82,7 +82,7 @@ impl HI_R {
     }
 }
 #[doc = "Field `HI` writer - High duty cycle control."]
-pub type HI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, HI_A>;
+pub type HI_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 8, O, HI_A>;
 impl<'a, REG, const O: u8> HI_W<'a, REG, O>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -134,7 +134,11 @@ impl W {
     pub fn scale(&mut self) -> SCALE_W<CLK_CFG_SPEC, 16> {
         SCALE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

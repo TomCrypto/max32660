@@ -339,6 +339,23 @@ impl ALDF_R {
         *self == ALDF_A::PENDING
     }
 }
+#[doc = "Field `ALDF` writer - Time-of-Day Alarm Interrupt Flag."]
+pub type ALDF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALDF_A>;
+impl<'a, REG, const O: u8> ALDF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Not active."]
+    #[inline(always)]
+    pub fn inactive(self) -> &'a mut crate::W<REG> {
+        self.variant(ALDF_A::INACTIVE)
+    }
+    #[doc = "Active."]
+    #[inline(always)]
+    pub fn pending(self) -> &'a mut crate::W<REG> {
+        self.variant(ALDF_A::PENDING)
+    }
+}
 #[doc = "Field `ALSF` reader - Sub-second Alarm Interrupt Flag."]
 pub type ALSF_R = crate::BitReader<ALSF_A>;
 #[doc = "Sub-second Alarm Interrupt Flag.\n\nValue on reset: 0"]
@@ -373,6 +390,23 @@ impl ALSF_R {
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
         *self == ALSF_A::PENDING
+    }
+}
+#[doc = "Field `ALSF` writer - Sub-second Alarm Interrupt Flag."]
+pub type ALSF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALSF_A>;
+impl<'a, REG, const O: u8> ALSF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Not active."]
+    #[inline(always)]
+    pub fn inactive(self) -> &'a mut crate::W<REG> {
+        self.variant(ALSF_A::INACTIVE)
+    }
+    #[doc = "Active."]
+    #[inline(always)]
+    pub fn pending(self) -> &'a mut crate::W<REG> {
+        self.variant(ALSF_A::PENDING)
     }
 }
 #[doc = "Field `SQE` reader - Square Wave Output Enable."]
@@ -744,6 +778,18 @@ impl W {
     pub fn rdye(&mut self) -> RDYE_W<CTRL_SPEC, 5> {
         RDYE_W::new(self)
     }
+    #[doc = "Bit 6 - Time-of-Day Alarm Interrupt Flag."]
+    #[inline(always)]
+    #[must_use]
+    pub fn aldf(&mut self) -> ALDF_W<CTRL_SPEC, 6> {
+        ALDF_W::new(self)
+    }
+    #[doc = "Bit 7 - Sub-second Alarm Interrupt Flag."]
+    #[inline(always)]
+    #[must_use]
+    pub fn alsf(&mut self) -> ALSF_W<CTRL_SPEC, 7> {
+        ALSF_W::new(self)
+    }
     #[doc = "Bit 8 - Square Wave Output Enable."]
     #[inline(always)]
     #[must_use]
@@ -768,7 +814,11 @@ impl W {
     pub fn we(&mut self) -> WE_W<CTRL_SPEC, 15> {
         WE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

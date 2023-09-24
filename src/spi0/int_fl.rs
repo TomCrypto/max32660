@@ -278,7 +278,7 @@ impl ABORT_R {
     }
 }
 #[doc = "Field `ABORT` writer - Slave Abort Detected."]
-pub type ABORT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ABORT_A>;
+pub type ABORT_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O, ABORT_A>;
 impl<'a, REG, const O: u8> ABORT_W<'a, REG, O>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -319,7 +319,7 @@ impl M_DONE_R {
     }
 }
 #[doc = "Field `M_DONE` writer - Master Done, set when SPI Master has completed any transactions."]
-pub type M_DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, M_DONE_A>;
+pub type M_DONE_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O, M_DONE_A>;
 impl<'a, REG, const O: u8> M_DONE_W<'a, REG, O>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -360,7 +360,7 @@ impl TX_OVR_R {
     }
 }
 #[doc = "Field `TX_OVR` writer - Transmit FIFO Overrun, set when the AMBA side attempts to write data to a full transmit FIFO."]
-pub type TX_OVR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_OVR_A>;
+pub type TX_OVR_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O, TX_OVR_A>;
 impl<'a, REG, const O: u8> TX_OVR_W<'a, REG, O>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -401,7 +401,7 @@ impl TX_UND_R {
     }
 }
 #[doc = "Field `TX_UND` writer - Transmit FIFO Underrun, set when the SPI side attempts to read data from an empty transmit FIFO."]
-pub type TX_UND_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_UND_A>;
+pub type TX_UND_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O, TX_UND_A>;
 impl<'a, REG, const O: u8> TX_UND_W<'a, REG, O>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -442,7 +442,7 @@ impl RX_OVR_R {
     }
 }
 #[doc = "Field `RX_OVR` writer - Receive FIFO Overrun, set when the SPI side attempts to write to a full receive FIFO."]
-pub type RX_OVR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_OVR_A>;
+pub type RX_OVR_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O, RX_OVR_A>;
 impl<'a, REG, const O: u8> RX_OVR_W<'a, REG, O>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -629,7 +629,11 @@ impl W {
     pub fn rx_und(&mut self) -> RX_UND_W<INT_FL_SPEC, 15> {
         RX_UND_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
@@ -646,7 +650,7 @@ impl crate::Readable for INT_FL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`int_fl::W`](W) writer structure"]
 impl crate::Writable for INT_FL_SPEC {
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x7a00;
 }
 #[doc = "`reset()` method sets INT_FL to value 0"]
 impl crate::Resettable for INT_FL_SPEC {

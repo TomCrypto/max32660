@@ -162,58 +162,9 @@ where
     }
 }
 #[doc = "Field `ACCESS_FAIL_IE` reader - Flash Done Interrupt Enable."]
-pub type ACCESS_FAIL_IE_R = crate::BitReader<ACCESS_FAIL_IE_A>;
-#[doc = "Flash Done Interrupt Enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ACCESS_FAIL_IE_A {
-    #[doc = "0: Disabled."]
-    DISABLED = 0,
-    #[doc = "1: Enabled."]
-    ENABLED = 1,
-}
-impl From<ACCESS_FAIL_IE_A> for bool {
-    #[inline(always)]
-    fn from(variant: ACCESS_FAIL_IE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ACCESS_FAIL_IE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> ACCESS_FAIL_IE_A {
-        match self.bits {
-            false => ACCESS_FAIL_IE_A::DISABLED,
-            true => ACCESS_FAIL_IE_A::ENABLED,
-        }
-    }
-    #[doc = "Disabled."]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == ACCESS_FAIL_IE_A::DISABLED
-    }
-    #[doc = "Enabled."]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == ACCESS_FAIL_IE_A::ENABLED
-    }
-}
+pub use DONE_IE_R as ACCESS_FAIL_IE_R;
 #[doc = "Field `ACCESS_FAIL_IE` writer - Flash Done Interrupt Enable."]
-pub type ACCESS_FAIL_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACCESS_FAIL_IE_A>;
-impl<'a, REG, const O: u8> ACCESS_FAIL_IE_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Disabled."]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(ACCESS_FAIL_IE_A::DISABLED)
-    }
-    #[doc = "Enabled."]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(ACCESS_FAIL_IE_A::ENABLED)
-    }
-}
+pub use DONE_IE_W as ACCESS_FAIL_IE_W;
 impl R {
     #[doc = "Bit 0 - Flash Done Interrupt."]
     #[inline(always)]
@@ -261,7 +212,11 @@ impl W {
     pub fn access_fail_ie(&mut self) -> ACCESS_FAIL_IE_W<INTR_SPEC, 9> {
         ACCESS_FAIL_IE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

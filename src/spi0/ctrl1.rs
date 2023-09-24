@@ -5,11 +5,11 @@ pub type W = crate::W<CTRL1_SPEC>;
 #[doc = "Field `TX_NUM_CHAR` reader - Nubmer of Characters to transmit."]
 pub type TX_NUM_CHAR_R = crate::FieldReader<u16>;
 #[doc = "Field `TX_NUM_CHAR` writer - Nubmer of Characters to transmit."]
-pub type TX_NUM_CHAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type TX_NUM_CHAR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 16, O, u16>;
 #[doc = "Field `RX_NUM_CHAR` reader - Nubmer of Characters to receive."]
 pub type RX_NUM_CHAR_R = crate::FieldReader<u16>;
 #[doc = "Field `RX_NUM_CHAR` writer - Nubmer of Characters to receive."]
-pub type RX_NUM_CHAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type RX_NUM_CHAR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Nubmer of Characters to transmit."]
     #[inline(always)]
@@ -35,7 +35,11 @@ impl W {
     pub fn rx_num_char(&mut self) -> RX_NUM_CHAR_W<CTRL1_SPEC, 16> {
         RX_NUM_CHAR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

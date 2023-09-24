@@ -15,6 +15,14 @@ Install the `svd2rust` and `form` tools and run the `generate.sh` script to gene
 
 ## Changelog
 
+### 0.2.0
+
+ - Added some helpful enumerated values to the DMA burst size field
+ - Added some missing oneToClear attributes on some SPI0.INT_FL fields
+ - Fixed some RTC.CTRL fields with incorrect access attributes
+ - Added a number of convenient `writeConstraint` attributes
+ - Regenerated crate contents using `svd2rust` version `0.30.1`
+
 ### 0.1.0
 
  - Added SVD from Maxim Micros SDK with various modifications and improvements

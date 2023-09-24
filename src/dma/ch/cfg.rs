@@ -921,9 +921,116 @@ where
     }
 }
 #[doc = "Field `BRST` reader - Burst Size."]
-pub type BRST_R = crate::FieldReader;
+pub type BRST_R = crate::FieldReader<BRST_A>;
+#[doc = "Burst Size.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum BRST_A {
+    #[doc = "0: Burst size of 1 byte."]
+    BYTES_1 = 0,
+    #[doc = "1: Burst size of 2 bytes."]
+    BYTES_2 = 1,
+    #[doc = "3: Burst size of 4 bytes."]
+    BYTES_4 = 3,
+    #[doc = "7: Burst size of 8 bytes."]
+    BYTES_8 = 7,
+    #[doc = "15: Burst size of 16 bytes."]
+    BYTES_16 = 15,
+    #[doc = "31: Burst size of 32 bytes."]
+    BYTES_32 = 31,
+}
+impl From<BRST_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BRST_A) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for BRST_A {
+    type Ux = u8;
+}
+impl BRST_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<BRST_A> {
+        match self.bits {
+            0 => Some(BRST_A::BYTES_1),
+            1 => Some(BRST_A::BYTES_2),
+            3 => Some(BRST_A::BYTES_4),
+            7 => Some(BRST_A::BYTES_8),
+            15 => Some(BRST_A::BYTES_16),
+            31 => Some(BRST_A::BYTES_32),
+            _ => None,
+        }
+    }
+    #[doc = "Burst size of 1 byte."]
+    #[inline(always)]
+    pub fn is_bytes_1(&self) -> bool {
+        *self == BRST_A::BYTES_1
+    }
+    #[doc = "Burst size of 2 bytes."]
+    #[inline(always)]
+    pub fn is_bytes_2(&self) -> bool {
+        *self == BRST_A::BYTES_2
+    }
+    #[doc = "Burst size of 4 bytes."]
+    #[inline(always)]
+    pub fn is_bytes_4(&self) -> bool {
+        *self == BRST_A::BYTES_4
+    }
+    #[doc = "Burst size of 8 bytes."]
+    #[inline(always)]
+    pub fn is_bytes_8(&self) -> bool {
+        *self == BRST_A::BYTES_8
+    }
+    #[doc = "Burst size of 16 bytes."]
+    #[inline(always)]
+    pub fn is_bytes_16(&self) -> bool {
+        *self == BRST_A::BYTES_16
+    }
+    #[doc = "Burst size of 32 bytes."]
+    #[inline(always)]
+    pub fn is_bytes_32(&self) -> bool {
+        *self == BRST_A::BYTES_32
+    }
+}
 #[doc = "Field `BRST` writer - Burst Size."]
-pub type BRST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type BRST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O, BRST_A>;
+impl<'a, REG, const O: u8> BRST_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Burst size of 1 byte."]
+    #[inline(always)]
+    pub fn bytes_1(self) -> &'a mut crate::W<REG> {
+        self.variant(BRST_A::BYTES_1)
+    }
+    #[doc = "Burst size of 2 bytes."]
+    #[inline(always)]
+    pub fn bytes_2(self) -> &'a mut crate::W<REG> {
+        self.variant(BRST_A::BYTES_2)
+    }
+    #[doc = "Burst size of 4 bytes."]
+    #[inline(always)]
+    pub fn bytes_4(self) -> &'a mut crate::W<REG> {
+        self.variant(BRST_A::BYTES_4)
+    }
+    #[doc = "Burst size of 8 bytes."]
+    #[inline(always)]
+    pub fn bytes_8(self) -> &'a mut crate::W<REG> {
+        self.variant(BRST_A::BYTES_8)
+    }
+    #[doc = "Burst size of 16 bytes."]
+    #[inline(always)]
+    pub fn bytes_16(self) -> &'a mut crate::W<REG> {
+        self.variant(BRST_A::BYTES_16)
+    }
+    #[doc = "Burst size of 32 bytes."]
+    #[inline(always)]
+    pub fn bytes_32(self) -> &'a mut crate::W<REG> {
+        self.variant(BRST_A::BYTES_32)
+    }
+}
 #[doc = "Field `CHDIEN` reader - Channel Disable Interrupt Enable."]
 pub type CHDIEN_R = crate::BitReader<CHDIEN_A>;
 #[doc = "Channel Disable Interrupt Enable.\n\nValue on reset: 0"]
@@ -1187,7 +1294,11 @@ impl W {
     pub fn ctzien(&mut self) -> CTZIEN_W<CFG_SPEC, 31> {
         CTZIEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

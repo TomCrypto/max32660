@@ -539,6 +539,38 @@
                 <description>Burst Size.</description>
                 <bitOffset>24</bitOffset>
                 <bitWidth>5</bitWidth>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>bytes_1</name>
+                    <description>Burst size of 1 byte.</description>
+                    <value>0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>bytes_2</name>
+                    <description>Burst size of 2 bytes.</description>
+                    <value>1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>bytes_4</name>
+                    <description>Burst size of 4 bytes.</description>
+                    <value>3</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>bytes_8</name>
+                    <description>Burst size of 8 bytes.</description>
+                    <value>7</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>bytes_16</name>
+                    <description>Burst size of 16 bytes.</description>
+                    <value>15</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>bytes_32</name>
+                    <description>Burst size of 32 bytes.</description>
+                    <value>31</value>
+                  </enumeratedValue>
+                </enumeratedValues>
               </field>
               <field>
                 <name>CHDIEN</name>
@@ -744,6 +776,12 @@
                 <name>SRC</name>
                 <bitOffset>0</bitOffset>
                 <bitWidth>32</bitWidth>
+                <writeConstraint>
+                  <range>
+                    <minimum>0</minimum>
+                    <maximum>0xFFFFFFFF</maximum>
+                  </range>
+                </writeConstraint>
               </field>
             </fields>
           </register>
@@ -756,6 +794,12 @@
                 <name>DST</name>
                 <bitOffset>0</bitOffset>
                 <bitWidth>32</bitWidth>
+                <writeConstraint>
+                  <range>
+                    <minimum>0</minimum>
+                    <maximum>0xFFFFFFFF</maximum>
+                  </range>
+                </writeConstraint>
               </field>
             </fields>
           </register>
@@ -11694,6 +11738,12 @@
               <description>Reload value for sub-second alarm.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFFFFFFFF</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -11818,7 +11868,6 @@
               <description>Time-of-Day Alarm Interrupt Flag.</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-only</access>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>inactive</name>
@@ -11837,7 +11886,6 @@
               <description>Sub-second Alarm Interrupt Flag.</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-only</access>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>inactive</name>
@@ -12258,12 +12306,24 @@
               <description>Nubmer of Characters to transmit.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFFFF</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>RX_NUM_CHAR</name>
               <description>Nubmer of Characters to receive.</description>
               <bitOffset>16</bitOffset>
               <bitWidth>16</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFFFF</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -12391,42 +12451,39 @@
           <fields>
             <field>
               <name>SSACT1</name>
-              <description>Slave Select Pre delay 1.</description>
+              <description>Slave Select Pre delay.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>256</name>
-                  <description>256 system clocks between SS active and first serial clock edge.</description>
-                  <value>0</value>
-                </enumeratedValue>
-              </enumeratedValues>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFF</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>SSACT2</name>
-              <description>Slave Select Post delay 2.</description>
+              <description>Slave Select Post delay.</description>
               <bitOffset>8</bitOffset>
               <bitWidth>8</bitWidth>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>256</name>
-                  <description>256 system clocks between last serial clock edge and SS inactive.</description>
-                  <value>0</value>
-                </enumeratedValue>
-              </enumeratedValues>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFF</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>SSINACT</name>
               <description>Slave Select Inactive delay.</description>
               <bitOffset>16</bitOffset>
               <bitWidth>8</bitWidth>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>256</name>
-                  <description>256 system clocks between transactions.</description>
-                  <value>0</value>
-                </enumeratedValue>
-              </enumeratedValues>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFF</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -12441,6 +12498,12 @@
               <description>Low duty cycle control.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFF</maximum>
+                </range>
+              </writeConstraint>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>disabled</name>
@@ -12454,6 +12517,12 @@
               <description>High duty cycle control.</description>
               <bitOffset>8</bitOffset>
               <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFF</maximum>
+                </range>
+              </writeConstraint>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>disabled</name>
@@ -12691,6 +12760,7 @@
               <description>Slave Abort Detected.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>clear</name>
@@ -12704,6 +12774,7 @@
               <description>Master Done, set when SPI Master has completed any transactions.</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>clear</name>
@@ -12717,6 +12788,7 @@
               <description>Transmit FIFO Overrun, set when the AMBA side attempts to write data to a full transmit FIFO.</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>clear</name>
@@ -12730,6 +12802,7 @@
               <description>Transmit FIFO Underrun, set when the SPI side attempts to read data from an empty transmit FIFO.</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>clear</name>
@@ -12743,6 +12816,7 @@
               <description>Receive FIFO Overrun, set when the SPI side attempts to write to a full receive FIFO.</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>clear</name>
@@ -13638,6 +13712,12 @@
               <description>Baud Rate Reload Value.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFFFF</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -13934,6 +14014,12 @@
               <description>The current count value for the timer.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFFFFFFFF</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -13948,6 +14034,12 @@
               <description>Compare value.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFFFFFFFF</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>

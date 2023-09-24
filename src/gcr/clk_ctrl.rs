@@ -301,58 +301,9 @@ where
     }
 }
 #[doc = "Field `HIRC_EN` reader - 60MHz High Frequency Internal Reference Clock Enable."]
-pub type HIRC_EN_R = crate::BitReader<HIRC_EN_A>;
-#[doc = "60MHz High Frequency Internal Reference Clock Enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum HIRC_EN_A {
-    #[doc = "0: Is Disabled."]
-    DISABLED = 0,
-    #[doc = "1: Is Enabled."]
-    ENABLED = 1,
-}
-impl From<HIRC_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: HIRC_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl HIRC_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> HIRC_EN_A {
-        match self.bits {
-            false => HIRC_EN_A::DISABLED,
-            true => HIRC_EN_A::ENABLED,
-        }
-    }
-    #[doc = "Is Disabled."]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == HIRC_EN_A::DISABLED
-    }
-    #[doc = "Is Enabled."]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == HIRC_EN_A::ENABLED
-    }
-}
+pub use X32K_EN_R as HIRC_EN_R;
 #[doc = "Field `HIRC_EN` writer - 60MHz High Frequency Internal Reference Clock Enable."]
-pub type HIRC_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIRC_EN_A>;
-impl<'a, REG, const O: u8> HIRC_EN_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Is Disabled."]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(HIRC_EN_A::DISABLED)
-    }
-    #[doc = "Is Enabled."]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(HIRC_EN_A::ENABLED)
-    }
-}
+pub use X32K_EN_W as HIRC_EN_W;
 #[doc = "Field `X32K_RDY` reader - 32kHz Crystal Oscillator Ready."]
 pub type X32K_RDY_R = crate::BitReader<X32K_RDY_A>;
 #[doc = "32kHz Crystal Oscillator Ready.\n\nValue on reset: 0"]
@@ -390,77 +341,9 @@ impl X32K_RDY_R {
     }
 }
 #[doc = "Field `HIRC_RDY` reader - 60MHz HIRC Ready."]
-pub type HIRC_RDY_R = crate::BitReader<HIRC_RDY_A>;
-#[doc = "60MHz HIRC Ready.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum HIRC_RDY_A {
-    #[doc = "0: Is not Ready."]
-    NOT = 0,
-    #[doc = "1: Is Ready."]
-    READY = 1,
-}
-impl From<HIRC_RDY_A> for bool {
-    #[inline(always)]
-    fn from(variant: HIRC_RDY_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl HIRC_RDY_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> HIRC_RDY_A {
-        match self.bits {
-            false => HIRC_RDY_A::NOT,
-            true => HIRC_RDY_A::READY,
-        }
-    }
-    #[doc = "Is not Ready."]
-    #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        *self == HIRC_RDY_A::NOT
-    }
-    #[doc = "Is Ready."]
-    #[inline(always)]
-    pub fn is_ready(&self) -> bool {
-        *self == HIRC_RDY_A::READY
-    }
-}
+pub use X32K_RDY_R as HIRC_RDY_R;
 #[doc = "Field `LIRC8K_RDY` reader - 8kHz Low Frequency Reference Clock Ready."]
-pub type LIRC8K_RDY_R = crate::BitReader<LIRC8K_RDY_A>;
-#[doc = "8kHz Low Frequency Reference Clock Ready.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum LIRC8K_RDY_A {
-    #[doc = "0: Is not Ready."]
-    NOT = 0,
-    #[doc = "1: Is Ready."]
-    READY = 1,
-}
-impl From<LIRC8K_RDY_A> for bool {
-    #[inline(always)]
-    fn from(variant: LIRC8K_RDY_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl LIRC8K_RDY_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> LIRC8K_RDY_A {
-        match self.bits {
-            false => LIRC8K_RDY_A::NOT,
-            true => LIRC8K_RDY_A::READY,
-        }
-    }
-    #[doc = "Is not Ready."]
-    #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        *self == LIRC8K_RDY_A::NOT
-    }
-    #[doc = "Is Ready."]
-    #[inline(always)]
-    pub fn is_ready(&self) -> bool {
-        *self == LIRC8K_RDY_A::READY
-    }
-}
+pub use X32K_RDY_R as LIRC8K_RDY_R;
 impl R {
     #[doc = "Bits 6:8 - Prescaler Select."]
     #[inline(always)]
@@ -528,7 +411,11 @@ impl W {
     pub fn hirc_en(&mut self) -> HIRC_EN_W<CLK_CTRL_SPEC, 18> {
         HIRC_EN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
