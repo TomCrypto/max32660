@@ -114,38 +114,38 @@ pub type NUMBITS_R = crate::FieldReader<NUMBITS_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NUMBITS_A {
-    #[doc = "0: `0`"]
-    BITS16 = 0,
-    #[doc = "1: `1`"]
-    BITS1 = 1,
-    #[doc = "2: `10`"]
-    BITS2 = 2,
-    #[doc = "3: `11`"]
-    BITS3 = 3,
-    #[doc = "4: `100`"]
-    BITS4 = 4,
-    #[doc = "5: `101`"]
-    BITS5 = 5,
-    #[doc = "6: `110`"]
-    BITS6 = 6,
-    #[doc = "7: `111`"]
-    BITS7 = 7,
-    #[doc = "8: `1000`"]
-    BITS8 = 8,
-    #[doc = "9: `1001`"]
-    BITS9 = 9,
-    #[doc = "10: `1010`"]
-    BITS10 = 10,
-    #[doc = "11: `1011`"]
-    BITS11 = 11,
-    #[doc = "12: `1100`"]
-    BITS12 = 12,
-    #[doc = "13: `1101`"]
-    BITS13 = 13,
-    #[doc = "14: `1110`"]
-    BITS14 = 14,
-    #[doc = "15: `1111`"]
-    BITS15 = 15,
+    #[doc = "0: 16 bits per character."]
+    _16 = 0,
+    #[doc = "1: 1 bit per character."]
+    _1 = 1,
+    #[doc = "2: 2 bits per character."]
+    _2 = 2,
+    #[doc = "3: 3 bits per character."]
+    _3 = 3,
+    #[doc = "4: 4 bits per character."]
+    _4 = 4,
+    #[doc = "5: 5 bits per character."]
+    _5 = 5,
+    #[doc = "6: 6 bits per character."]
+    _6 = 6,
+    #[doc = "7: 7 bits per character."]
+    _7 = 7,
+    #[doc = "8: 8 bits per character."]
+    _8 = 8,
+    #[doc = "9: 9 bits per character."]
+    _9 = 9,
+    #[doc = "10: 10 bits per character."]
+    _10 = 10,
+    #[doc = "11: 11 bits per character."]
+    _11 = 11,
+    #[doc = "12: 12 bits per character."]
+    _12 = 12,
+    #[doc = "13: 13 bits per character."]
+    _13 = 13,
+    #[doc = "14: 14 bits per character."]
+    _14 = 14,
+    #[doc = "15: 15 bits per character."]
+    _15 = 15,
 }
 impl From<NUMBITS_A> for u8 {
     #[inline(always)]
@@ -161,104 +161,104 @@ impl NUMBITS_R {
     #[inline(always)]
     pub fn variant(&self) -> NUMBITS_A {
         match self.bits {
-            0 => NUMBITS_A::BITS16,
-            1 => NUMBITS_A::BITS1,
-            2 => NUMBITS_A::BITS2,
-            3 => NUMBITS_A::BITS3,
-            4 => NUMBITS_A::BITS4,
-            5 => NUMBITS_A::BITS5,
-            6 => NUMBITS_A::BITS6,
-            7 => NUMBITS_A::BITS7,
-            8 => NUMBITS_A::BITS8,
-            9 => NUMBITS_A::BITS9,
-            10 => NUMBITS_A::BITS10,
-            11 => NUMBITS_A::BITS11,
-            12 => NUMBITS_A::BITS12,
-            13 => NUMBITS_A::BITS13,
-            14 => NUMBITS_A::BITS14,
-            15 => NUMBITS_A::BITS15,
+            0 => NUMBITS_A::_16,
+            1 => NUMBITS_A::_1,
+            2 => NUMBITS_A::_2,
+            3 => NUMBITS_A::_3,
+            4 => NUMBITS_A::_4,
+            5 => NUMBITS_A::_5,
+            6 => NUMBITS_A::_6,
+            7 => NUMBITS_A::_7,
+            8 => NUMBITS_A::_8,
+            9 => NUMBITS_A::_9,
+            10 => NUMBITS_A::_10,
+            11 => NUMBITS_A::_11,
+            12 => NUMBITS_A::_12,
+            13 => NUMBITS_A::_13,
+            14 => NUMBITS_A::_14,
+            15 => NUMBITS_A::_15,
             _ => unreachable!(),
         }
     }
-    #[doc = "`0`"]
+    #[doc = "16 bits per character."]
     #[inline(always)]
-    pub fn is_bits16(&self) -> bool {
-        *self == NUMBITS_A::BITS16
+    pub fn is_16(&self) -> bool {
+        *self == NUMBITS_A::_16
     }
-    #[doc = "`1`"]
+    #[doc = "1 bit per character."]
     #[inline(always)]
-    pub fn is_bits1(&self) -> bool {
-        *self == NUMBITS_A::BITS1
+    pub fn is_1(&self) -> bool {
+        *self == NUMBITS_A::_1
     }
-    #[doc = "`10`"]
+    #[doc = "2 bits per character."]
     #[inline(always)]
-    pub fn is_bits2(&self) -> bool {
-        *self == NUMBITS_A::BITS2
+    pub fn is_2(&self) -> bool {
+        *self == NUMBITS_A::_2
     }
-    #[doc = "`11`"]
+    #[doc = "3 bits per character."]
     #[inline(always)]
-    pub fn is_bits3(&self) -> bool {
-        *self == NUMBITS_A::BITS3
+    pub fn is_3(&self) -> bool {
+        *self == NUMBITS_A::_3
     }
-    #[doc = "`100`"]
+    #[doc = "4 bits per character."]
     #[inline(always)]
-    pub fn is_bits4(&self) -> bool {
-        *self == NUMBITS_A::BITS4
+    pub fn is_4(&self) -> bool {
+        *self == NUMBITS_A::_4
     }
-    #[doc = "`101`"]
+    #[doc = "5 bits per character."]
     #[inline(always)]
-    pub fn is_bits5(&self) -> bool {
-        *self == NUMBITS_A::BITS5
+    pub fn is_5(&self) -> bool {
+        *self == NUMBITS_A::_5
     }
-    #[doc = "`110`"]
+    #[doc = "6 bits per character."]
     #[inline(always)]
-    pub fn is_bits6(&self) -> bool {
-        *self == NUMBITS_A::BITS6
+    pub fn is_6(&self) -> bool {
+        *self == NUMBITS_A::_6
     }
-    #[doc = "`111`"]
+    #[doc = "7 bits per character."]
     #[inline(always)]
-    pub fn is_bits7(&self) -> bool {
-        *self == NUMBITS_A::BITS7
+    pub fn is_7(&self) -> bool {
+        *self == NUMBITS_A::_7
     }
-    #[doc = "`1000`"]
+    #[doc = "8 bits per character."]
     #[inline(always)]
-    pub fn is_bits8(&self) -> bool {
-        *self == NUMBITS_A::BITS8
+    pub fn is_8(&self) -> bool {
+        *self == NUMBITS_A::_8
     }
-    #[doc = "`1001`"]
+    #[doc = "9 bits per character."]
     #[inline(always)]
-    pub fn is_bits9(&self) -> bool {
-        *self == NUMBITS_A::BITS9
+    pub fn is_9(&self) -> bool {
+        *self == NUMBITS_A::_9
     }
-    #[doc = "`1010`"]
+    #[doc = "10 bits per character."]
     #[inline(always)]
-    pub fn is_bits10(&self) -> bool {
-        *self == NUMBITS_A::BITS10
+    pub fn is_10(&self) -> bool {
+        *self == NUMBITS_A::_10
     }
-    #[doc = "`1011`"]
+    #[doc = "11 bits per character."]
     #[inline(always)]
-    pub fn is_bits11(&self) -> bool {
-        *self == NUMBITS_A::BITS11
+    pub fn is_11(&self) -> bool {
+        *self == NUMBITS_A::_11
     }
-    #[doc = "`1100`"]
+    #[doc = "12 bits per character."]
     #[inline(always)]
-    pub fn is_bits12(&self) -> bool {
-        *self == NUMBITS_A::BITS12
+    pub fn is_12(&self) -> bool {
+        *self == NUMBITS_A::_12
     }
-    #[doc = "`1101`"]
+    #[doc = "13 bits per character."]
     #[inline(always)]
-    pub fn is_bits13(&self) -> bool {
-        *self == NUMBITS_A::BITS13
+    pub fn is_13(&self) -> bool {
+        *self == NUMBITS_A::_13
     }
-    #[doc = "`1110`"]
+    #[doc = "14 bits per character."]
     #[inline(always)]
-    pub fn is_bits14(&self) -> bool {
-        *self == NUMBITS_A::BITS14
+    pub fn is_14(&self) -> bool {
+        *self == NUMBITS_A::_14
     }
-    #[doc = "`1111`"]
+    #[doc = "15 bits per character."]
     #[inline(always)]
-    pub fn is_bits15(&self) -> bool {
-        *self == NUMBITS_A::BITS15
+    pub fn is_15(&self) -> bool {
+        *self == NUMBITS_A::_15
     }
 }
 #[doc = "Field `NUMBITS` writer - "]
@@ -268,85 +268,85 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "`0`"]
+    #[doc = "16 bits per character."]
     #[inline(always)]
-    pub fn bits16(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS16)
+    pub fn _16(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_16)
     }
-    #[doc = "`1`"]
+    #[doc = "1 bit per character."]
     #[inline(always)]
-    pub fn bits1(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS1)
+    pub fn _1(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_1)
     }
-    #[doc = "`10`"]
+    #[doc = "2 bits per character."]
     #[inline(always)]
-    pub fn bits2(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS2)
+    pub fn _2(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_2)
     }
-    #[doc = "`11`"]
+    #[doc = "3 bits per character."]
     #[inline(always)]
-    pub fn bits3(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS3)
+    pub fn _3(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_3)
     }
-    #[doc = "`100`"]
+    #[doc = "4 bits per character."]
     #[inline(always)]
-    pub fn bits4(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS4)
+    pub fn _4(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_4)
     }
-    #[doc = "`101`"]
+    #[doc = "5 bits per character."]
     #[inline(always)]
-    pub fn bits5(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS5)
+    pub fn _5(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_5)
     }
-    #[doc = "`110`"]
+    #[doc = "6 bits per character."]
     #[inline(always)]
-    pub fn bits6(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS6)
+    pub fn _6(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_6)
     }
-    #[doc = "`111`"]
+    #[doc = "7 bits per character."]
     #[inline(always)]
-    pub fn bits7(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS7)
+    pub fn _7(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_7)
     }
-    #[doc = "`1000`"]
+    #[doc = "8 bits per character."]
     #[inline(always)]
-    pub fn bits8(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS8)
+    pub fn _8(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_8)
     }
-    #[doc = "`1001`"]
+    #[doc = "9 bits per character."]
     #[inline(always)]
-    pub fn bits9(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS9)
+    pub fn _9(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_9)
     }
-    #[doc = "`1010`"]
+    #[doc = "10 bits per character."]
     #[inline(always)]
-    pub fn bits10(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS10)
+    pub fn _10(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_10)
     }
-    #[doc = "`1011`"]
+    #[doc = "11 bits per character."]
     #[inline(always)]
-    pub fn bits11(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS11)
+    pub fn _11(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_11)
     }
-    #[doc = "`1100`"]
+    #[doc = "12 bits per character."]
     #[inline(always)]
-    pub fn bits12(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS12)
+    pub fn _12(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_12)
     }
-    #[doc = "`1101`"]
+    #[doc = "13 bits per character."]
     #[inline(always)]
-    pub fn bits13(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS13)
+    pub fn _13(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_13)
     }
-    #[doc = "`1110`"]
+    #[doc = "14 bits per character."]
     #[inline(always)]
-    pub fn bits14(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS14)
+    pub fn _14(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_14)
     }
-    #[doc = "`1111`"]
+    #[doc = "15 bits per character."]
     #[inline(always)]
-    pub fn bits15(self) -> &'a mut crate::W<REG> {
-        self.variant(NUMBITS_A::BITS15)
+    pub fn _15(self) -> &'a mut crate::W<REG> {
+        self.variant(NUMBITS_A::_15)
     }
 }
 #[doc = "Field `TX_LJ` reader - Transmit Left Justify."]

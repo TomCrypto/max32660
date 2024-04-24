@@ -5,7 +5,7 @@ pub type W = crate::W<CLKDIV_SPEC>;
 #[doc = "Field `CLKDIV` reader - Flash Clock Divide."]
 pub type CLKDIV_R = crate::FieldReader;
 #[doc = "Field `CLKDIV` writer - Flash Clock Divide."]
-pub type CLKDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CLKDIV_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Flash Clock Divide."]
     #[inline(always)]

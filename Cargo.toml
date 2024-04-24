@@ -1,7 +1,7 @@
 [package]
 name = "max32660"
 edition = "2021"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Thomas Bénéteau <thomas@bitwise.me>"]
 description = "Register mappings for the Analog Devices MAX32660 Cortex-M4 microcontroller"
 documentation = "https://docs.rs/max32660"

@@ -115,7 +115,33 @@ pub type NUM_BITS_R = crate::FieldReader<NUM_BITS_A>;
 #[repr(u8)]
 pub enum NUM_BITS_A {
     #[doc = "0: 16 bits per character."]
-    _0 = 0,
+    _16 = 0,
+    #[doc = "2: 2 bits per character."]
+    _2 = 2,
+    #[doc = "3: 3 bits per character."]
+    _3 = 3,
+    #[doc = "4: 4 bits per character."]
+    _4 = 4,
+    #[doc = "5: 5 bits per character."]
+    _5 = 5,
+    #[doc = "6: 6 bits per character."]
+    _6 = 6,
+    #[doc = "7: 7 bits per character."]
+    _7 = 7,
+    #[doc = "8: 8 bits per character."]
+    _8 = 8,
+    #[doc = "10: 10 bits per character."]
+    _10 = 10,
+    #[doc = "11: 11 bits per character."]
+    _11 = 11,
+    #[doc = "12: 12 bits per character."]
+    _12 = 12,
+    #[doc = "13: 13 bits per character."]
+    _13 = 13,
+    #[doc = "14: 14 bits per character."]
+    _14 = 14,
+    #[doc = "15: 15 bits per character."]
+    _15 = 15,
 }
 impl From<NUM_BITS_A> for u8 {
     #[inline(always)]
@@ -131,14 +157,92 @@ impl NUM_BITS_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<NUM_BITS_A> {
         match self.bits {
-            0 => Some(NUM_BITS_A::_0),
+            0 => Some(NUM_BITS_A::_16),
+            2 => Some(NUM_BITS_A::_2),
+            3 => Some(NUM_BITS_A::_3),
+            4 => Some(NUM_BITS_A::_4),
+            5 => Some(NUM_BITS_A::_5),
+            6 => Some(NUM_BITS_A::_6),
+            7 => Some(NUM_BITS_A::_7),
+            8 => Some(NUM_BITS_A::_8),
+            10 => Some(NUM_BITS_A::_10),
+            11 => Some(NUM_BITS_A::_11),
+            12 => Some(NUM_BITS_A::_12),
+            13 => Some(NUM_BITS_A::_13),
+            14 => Some(NUM_BITS_A::_14),
+            15 => Some(NUM_BITS_A::_15),
             _ => None,
         }
     }
     #[doc = "16 bits per character."]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == NUM_BITS_A::_0
+    pub fn is_16(&self) -> bool {
+        *self == NUM_BITS_A::_16
+    }
+    #[doc = "2 bits per character."]
+    #[inline(always)]
+    pub fn is_2(&self) -> bool {
+        *self == NUM_BITS_A::_2
+    }
+    #[doc = "3 bits per character."]
+    #[inline(always)]
+    pub fn is_3(&self) -> bool {
+        *self == NUM_BITS_A::_3
+    }
+    #[doc = "4 bits per character."]
+    #[inline(always)]
+    pub fn is_4(&self) -> bool {
+        *self == NUM_BITS_A::_4
+    }
+    #[doc = "5 bits per character."]
+    #[inline(always)]
+    pub fn is_5(&self) -> bool {
+        *self == NUM_BITS_A::_5
+    }
+    #[doc = "6 bits per character."]
+    #[inline(always)]
+    pub fn is_6(&self) -> bool {
+        *self == NUM_BITS_A::_6
+    }
+    #[doc = "7 bits per character."]
+    #[inline(always)]
+    pub fn is_7(&self) -> bool {
+        *self == NUM_BITS_A::_7
+    }
+    #[doc = "8 bits per character."]
+    #[inline(always)]
+    pub fn is_8(&self) -> bool {
+        *self == NUM_BITS_A::_8
+    }
+    #[doc = "10 bits per character."]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == NUM_BITS_A::_10
+    }
+    #[doc = "11 bits per character."]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == NUM_BITS_A::_11
+    }
+    #[doc = "12 bits per character."]
+    #[inline(always)]
+    pub fn is_12(&self) -> bool {
+        *self == NUM_BITS_A::_12
+    }
+    #[doc = "13 bits per character."]
+    #[inline(always)]
+    pub fn is_13(&self) -> bool {
+        *self == NUM_BITS_A::_13
+    }
+    #[doc = "14 bits per character."]
+    #[inline(always)]
+    pub fn is_14(&self) -> bool {
+        *self == NUM_BITS_A::_14
+    }
+    #[doc = "15 bits per character."]
+    #[inline(always)]
+    pub fn is_15(&self) -> bool {
+        *self == NUM_BITS_A::_15
     }
 }
 #[doc = "Field `NUM_BITS` writer - Number of Bits per character."]
@@ -150,8 +254,73 @@ where
 {
     #[doc = "16 bits per character."]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(NUM_BITS_A::_0)
+    pub fn _16(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_16)
+    }
+    #[doc = "2 bits per character."]
+    #[inline(always)]
+    pub fn _2(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_2)
+    }
+    #[doc = "3 bits per character."]
+    #[inline(always)]
+    pub fn _3(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_3)
+    }
+    #[doc = "4 bits per character."]
+    #[inline(always)]
+    pub fn _4(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_4)
+    }
+    #[doc = "5 bits per character."]
+    #[inline(always)]
+    pub fn _5(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_5)
+    }
+    #[doc = "6 bits per character."]
+    #[inline(always)]
+    pub fn _6(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_6)
+    }
+    #[doc = "7 bits per character."]
+    #[inline(always)]
+    pub fn _7(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_7)
+    }
+    #[doc = "8 bits per character."]
+    #[inline(always)]
+    pub fn _8(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_8)
+    }
+    #[doc = "10 bits per character."]
+    #[inline(always)]
+    pub fn _10(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_10)
+    }
+    #[doc = "11 bits per character."]
+    #[inline(always)]
+    pub fn _11(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_11)
+    }
+    #[doc = "12 bits per character."]
+    #[inline(always)]
+    pub fn _12(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_12)
+    }
+    #[doc = "13 bits per character."]
+    #[inline(always)]
+    pub fn _13(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_13)
+    }
+    #[doc = "14 bits per character."]
+    #[inline(always)]
+    pub fn _14(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_14)
+    }
+    #[doc = "15 bits per character."]
+    #[inline(always)]
+    pub fn _15(self) -> &'a mut crate::W<REG> {
+        self.variant(NUM_BITS_A::_15)
     }
 }
 #[doc = "Field `DATA_WIDTH` reader - SPI Data width."]

@@ -1007,6 +1007,12 @@
               <description>Flash Clock Divide.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0xFF</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -1873,6 +1879,48 @@
               <description>Flash Wait State.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>0</name>
+                  <description>Set 0 flash wait states.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1</name>
+                  <description>Set 1 flash wait state.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2</name>
+                  <description>Set 2 flash wait states.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>3</name>
+                  <description>Set 3 flash wait states.</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4</name>
+                  <description>Set 4 flash wait states.</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>5</name>
+                  <description>Set 5 flash wait states.</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6</name>
+                  <description>Set 6 flash wait states.</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>7</name>
+                  <description>Set 7 flash wait states.</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>RAM0_LS</name>
@@ -12376,9 +12424,74 @@
               <bitWidth>4</bitWidth>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>0</name>
+                  <name>16</name>
                   <description>16 bits per character.</description>
                   <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2</name>
+                  <description>2 bits per character.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>3</name>
+                  <description>3 bits per character.</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4</name>
+                  <description>4 bits per character.</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>5</name>
+                  <description>5 bits per character.</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6</name>
+                  <description>6 bits per character.</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>7</name>
+                  <description>7 bits per character.</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8</name>
+                  <description>8 bits per character.</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10</name>
+                  <description>10 bits per character.</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>11</name>
+                  <description>11 bits per character.</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12</name>
+                  <description>12 bits per character.</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>13</name>
+                  <description>13 bits per character.</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14</name>
+                  <description>14 bits per character.</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>15</name>
+                  <description>15 bits per character.</description>
+                  <value>15</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -13618,67 +13731,83 @@
               <bitWidth>4</bitWidth>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>bits16</name>
+                  <name>16</name>
+                  <description>16 bits per character.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits1</name>
+                  <name>1</name>
+                  <description>1 bit per character.</description>
                   <value>1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits2</name>
+                  <name>2</name>
+                  <description>2 bits per character.</description>
                   <value>2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits3</name>
+                  <name>3</name>
+                  <description>3 bits per character.</description>
                   <value>3</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits4</name>
+                  <name>4</name>
+                  <description>4 bits per character.</description>
                   <value>4</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits5</name>
+                  <name>5</name>
+                  <description>5 bits per character.</description>
                   <value>5</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits6</name>
+                  <name>6</name>
+                  <description>6 bits per character.</description>
                   <value>6</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits7</name>
+                  <name>7</name>
+                  <description>7 bits per character.</description>
                   <value>7</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits8</name>
+                  <name>8</name>
+                  <description>8 bits per character.</description>
                   <value>8</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits9</name>
+                  <name>9</name>
+                  <description>9 bits per character.</description>
                   <value>9</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits10</name>
+                  <name>10</name>
+                  <description>10 bits per character.</description>
                   <value>10</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits11</name>
+                  <name>11</name>
+                  <description>11 bits per character.</description>
                   <value>11</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits12</name>
+                  <name>12</name>
+                  <description>12 bits per character.</description>
                   <value>12</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits13</name>
+                  <name>13</name>
+                  <description>13 bits per character.</description>
                   <value>13</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits14</name>
+                  <name>14</name>
+                  <description>14 bits per character.</description>
                   <value>14</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>bits15</name>
+                  <name>15</name>
+                  <description>15 bits per character.</description>
                   <value>15</value>
                 </enumeratedValue>
               </enumeratedValues>

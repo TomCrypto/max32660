@@ -15,6 +15,13 @@ Install the `svd2rust` and `form` tools and run the `generate.sh` script to gene
 
 ## Changelog
 
+### 0.2.1
+
+ - Added a missing `writeConstraint` attribute on `FLC.CLKDIV`
+ - Added `enumeratedValues` attributes on `GCR.MEMCKCN.FWS`
+ - Added `enumeratedValues` attributes on `SPI0.CTRL2.NUM_BITS`
+ - Fixed `enumeratedValues` attributes on `SPI1.CTRL.NUMBITS`
+
 ### 0.2.0
 
  - Added some helpful enumerated values to the DMA burst size field

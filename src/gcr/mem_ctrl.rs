@@ -3,9 +3,142 @@ pub type R = crate::R<MEM_CTRL_SPEC>;
 #[doc = "Register `MEM_CTRL` writer"]
 pub type W = crate::W<MEM_CTRL_SPEC>;
 #[doc = "Field `FWS` reader - Flash Wait State."]
-pub type FWS_R = crate::FieldReader;
+pub type FWS_R = crate::FieldReader<FWS_A>;
+#[doc = "Flash Wait State.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum FWS_A {
+    #[doc = "0: Set 0 flash wait states."]
+    _0 = 0,
+    #[doc = "1: Set 1 flash wait state."]
+    _1 = 1,
+    #[doc = "2: Set 2 flash wait states."]
+    _2 = 2,
+    #[doc = "3: Set 3 flash wait states."]
+    _3 = 3,
+    #[doc = "4: Set 4 flash wait states."]
+    _4 = 4,
+    #[doc = "5: Set 5 flash wait states."]
+    _5 = 5,
+    #[doc = "6: Set 6 flash wait states."]
+    _6 = 6,
+    #[doc = "7: Set 7 flash wait states."]
+    _7 = 7,
+}
+impl From<FWS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FWS_A) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for FWS_A {
+    type Ux = u8;
+}
+impl FWS_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FWS_A {
+        match self.bits {
+            0 => FWS_A::_0,
+            1 => FWS_A::_1,
+            2 => FWS_A::_2,
+            3 => FWS_A::_3,
+            4 => FWS_A::_4,
+            5 => FWS_A::_5,
+            6 => FWS_A::_6,
+            7 => FWS_A::_7,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Set 0 flash wait states."]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == FWS_A::_0
+    }
+    #[doc = "Set 1 flash wait state."]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == FWS_A::_1
+    }
+    #[doc = "Set 2 flash wait states."]
+    #[inline(always)]
+    pub fn is_2(&self) -> bool {
+        *self == FWS_A::_2
+    }
+    #[doc = "Set 3 flash wait states."]
+    #[inline(always)]
+    pub fn is_3(&self) -> bool {
+        *self == FWS_A::_3
+    }
+    #[doc = "Set 4 flash wait states."]
+    #[inline(always)]
+    pub fn is_4(&self) -> bool {
+        *self == FWS_A::_4
+    }
+    #[doc = "Set 5 flash wait states."]
+    #[inline(always)]
+    pub fn is_5(&self) -> bool {
+        *self == FWS_A::_5
+    }
+    #[doc = "Set 6 flash wait states."]
+    #[inline(always)]
+    pub fn is_6(&self) -> bool {
+        *self == FWS_A::_6
+    }
+    #[doc = "Set 7 flash wait states."]
+    #[inline(always)]
+    pub fn is_7(&self) -> bool {
+        *self == FWS_A::_7
+    }
+}
 #[doc = "Field `FWS` writer - Flash Wait State."]
-pub type FWS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type FWS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, FWS_A>;
+impl<'a, REG, const O: u8> FWS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Set 0 flash wait states."]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut crate::W<REG> {
+        self.variant(FWS_A::_0)
+    }
+    #[doc = "Set 1 flash wait state."]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut crate::W<REG> {
+        self.variant(FWS_A::_1)
+    }
+    #[doc = "Set 2 flash wait states."]
+    #[inline(always)]
+    pub fn _2(self) -> &'a mut crate::W<REG> {
+        self.variant(FWS_A::_2)
+    }
+    #[doc = "Set 3 flash wait states."]
+    #[inline(always)]
+    pub fn _3(self) -> &'a mut crate::W<REG> {
+        self.variant(FWS_A::_3)
+    }
+    #[doc = "Set 4 flash wait states."]
+    #[inline(always)]
+    pub fn _4(self) -> &'a mut crate::W<REG> {
+        self.variant(FWS_A::_4)
+    }
+    #[doc = "Set 5 flash wait states."]
+    #[inline(always)]
+    pub fn _5(self) -> &'a mut crate::W<REG> {
+        self.variant(FWS_A::_5)
+    }
+    #[doc = "Set 6 flash wait states."]
+    #[inline(always)]
+    pub fn _6(self) -> &'a mut crate::W<REG> {
+        self.variant(FWS_A::_6)
+    }
+    #[doc = "Set 7 flash wait states."]
+    #[inline(always)]
+    pub fn _7(self) -> &'a mut crate::W<REG> {
+        self.variant(FWS_A::_7)
+    }
+}
 #[doc = "Field `RAM0_LS` reader - System RAM 0 Light Sleep Mode."]
 pub type RAM0_LS_R = crate::BitReader<RAM0_LS_A>;
 #[doc = "System RAM 0 Light Sleep Mode.\n\nValue on reset: 0"]
